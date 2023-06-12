@@ -53,8 +53,8 @@ function playRound(playerChoice, computerChoice) {
     pResult.textContent = "It's a tie.";
     pPlayerScore.textContent = `Player score: ${playerScore}`;
     pComputerScore.textContent = `Computer score: ${computerScore}`;
-    if (computerScore === 3) {
-        pResult.textContent = "You won the game"
+    if (computerScore === 3 && playerScore === 3) {
+        pResult.textContent = "It's a tie"
         disableButtons();
     }
   } else if (
@@ -66,6 +66,9 @@ function playRound(playerChoice, computerChoice) {
     pResult.textContent = "You lose.";
     pPlayerScore.textContent = `Player score: ${playerScore}`;
     pComputerScore.textContent = `Computer score: ${computerScore}`;
+    if (computerScore === 3) {
+        pResult.textContent = "You lost the game"
+        disableButtons();
   } else {
     playerScore++;
     pResult.textContent = "You win!";
